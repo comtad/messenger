@@ -146,7 +146,7 @@ return [
         'message_audio' => [
             'upload' => env('MESSENGER_MESSAGE_AUDIO_UPLOAD', true),
             'size_limit' => env('MESSENGER_MESSAGE_AUDIO_SIZE_LIMIT', 10240),
-            'mime_types' => env('MESSENGER_MESSAGE_AUDIO_MIME_TYPES', 'aac,mp3,oga,ogg,wav,weba,webm'),
+            'mime_types' => env('MESSENGER_MESSAGE_AUDIO_MIME_TYPES', 'aac,adts,mp3,oga,ogg,wav,weba,webm'),
         ],
         'message_videos' => [
             'upload' => env('MESSENGER_MESSAGE_VIDEO_UPLOAD', true),
