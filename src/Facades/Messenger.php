@@ -92,8 +92,8 @@ use RTippin\Messenger\Models\Participant;
  * @method static \RTippin\Messenger\Messenger setCallsIndexCount(int $callsIndexCount)
  * @method static int getCallsPageCount()
  * @method static \RTippin\Messenger\Messenger setCallsPageCount(int $callsPageCount)
- * @method static array|string getAvatarStorage(string $config = null)
- * @method static array|string getThreadStorage(string $config = null)
+ * @method static array|string getAvatarStorage(?string $config = null)
+ * @method static array|string getThreadStorage(?string $config = null)
  * @method static bool isPushNotificationsEnabled()
  * @method static \RTippin\Messenger\Messenger setPushNotifications(bool $pushNotifications)
  * @method static void setProviderToOnline($provider = null)
@@ -167,7 +167,7 @@ use RTippin\Messenger\Models\Participant;
  * @method static \RTippin\Messenger\Messenger setCallSubscriber(string $option, $value)
  * @method static \RTippin\Messenger\Messenger setSystemMessageSubscriber(string $option, $value)
  * @method static bool shouldUseUuids(?bool $shouldUseUuids = null)
- * @method static bool shouldUseAbsoluteRoutes(bool $shouldUseAbsoluteRoutes = null)
+ * @method static bool shouldUseAbsoluteRoutes(?bool $shouldUseAbsoluteRoutes = null)
  *
  * @mixin \RTippin\Messenger\Messenger
  *

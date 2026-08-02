@@ -67,7 +67,7 @@ class SearchProvidersService
      * @param  string|null  $searchQuery
      * @return $this
      */
-    public function search(string $searchQuery = null): self
+    public function search(?string $searchQuery = null): self
     {
         return $this->sanitizeQuery($searchQuery)
             ->splitQuery()

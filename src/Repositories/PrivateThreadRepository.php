@@ -29,7 +29,7 @@ class PrivateThreadRepository
      * @param  MessengerProvider|null  $recipient
      * @return Thread|null
      */
-    public function getProviderPrivateThreadWithRecipient(MessengerProvider $recipient = null): ?Thread
+    public function getProviderPrivateThreadWithRecipient(?MessengerProvider $recipient = null): ?Thread
     {
         if ($this->messenger->isValidMessengerProvider($recipient)) {
             return Thread::hasProvider($this->messenger->getProvider())
