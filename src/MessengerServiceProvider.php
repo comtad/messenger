@@ -7,6 +7,7 @@ use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
+use Intervention\Image\ImageManager;
 use RTippin\Messenger\Brokers\BroadcastBroker;
 use RTippin\Messenger\Brokers\FriendBroker;
 use RTippin\Messenger\Brokers\NullVideoBroker;
@@ -57,6 +58,12 @@ class MessengerServiceProvider extends ServiceProvider
         $this->app->singleton(MessengerBots::class, MessengerBots::class);
         $this->app->singleton(FriendDriver::class, FriendBroker::class);
         $this->app->singleton(EmojiInterface::class, EmojiService::class);
+        $this->app->singleton(ImageManager::class, function ($app): ImageManager {
+            $config = (array) $app['config']->get('image', []);
+            $config['driver'] ??= extension_loaded('imagick') ? 'imagick' : 'gd';
+
+            return new ImageManager($config);
+        });
         $this->app->bind(MessengerComposer::class, MessengerComposer::class);
         $this->app->bind(BroadcastDriver::class, BroadcastBroker::class);
         $this->app->bind(VideoDriver::class, NullVideoBroker::class);
